@@ -19,4 +19,4 @@
 
 5. Для создания отчета Allure запустить команду:
 * для Windows: 'gradlew allureReport' и 'gradlew allureServe';
-* для *nix системы: './gradlew allureReport' и './gradlew allureServe' для *nix системы.
+* для *nix системы: './gradlew allureReport' и './gradlew allureServe'.
