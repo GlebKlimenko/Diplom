@@ -2,7 +2,6 @@ package ru.netology.test;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import lombok.val;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,23 +31,23 @@ public class ByinCreditTest {
     }
     @Test
     void shouldGetNotificationInvalidCard() {
-        val cardInfo = new DataHelper().getInvalidCardInfo("approved");
-        val creditPage = new OrderPage().goToCredit();
+        var cardInfo = new DataHelper().getInvalidCardInfo("approved");
+        var creditPage = new OrderPage().goToCredit();
         creditPage.credit(cardInfo);
         creditPage.invalidCardNotification();
     }
 
     @Test
     void shouldGetNotificationWrongFormatCard() {
-        val cardInfo = new DataHelper().getInvalidFormatCardInfo("4444");
-        val creditPage = new OrderPage().goToCredit();
+        var cardInfo = new DataHelper().getInvalidFormatCardInfo("4444");
+        var creditPage = new OrderPage().goToCredit();
         creditPage.credit(cardInfo);
         creditPage.wrongFormatNotification();
     }
     @Test
     void shouldCreditApprovedCard() {
-        val cardInfo = new DataHelper().getValidCardInfo("approved");
-        val creditPage = new OrderPage().goToCredit();
+        var cardInfo = new DataHelper().getValidCardInfo("approved");
+        var creditPage = new OrderPage().goToCredit();
         creditPage.credit(cardInfo);
         creditPage.approved();
         assertEquals("APPROVED", new DbHelper().getCreditRequestStatus());
@@ -57,8 +56,8 @@ public class ByinCreditTest {
 
     @Test
     void shouldPaymentDeclinedCard() {
-        val cardInfo = new DataHelper().getValidCardInfo("declined");
-        val creditPage = new OrderPage().goToCredit();
+        var cardInfo = new DataHelper().getValidCardInfo("declined");
+        var creditPage = new OrderPage().goToCredit();
         creditPage.credit(cardInfo);
         creditPage.declined();
         assertEquals("DECLINED", new DbHelper().getCreditRequestStatus());
@@ -66,7 +65,7 @@ public class ByinCreditTest {
     }
     @Test
     void shouldGetNotificationEmptyFields() {
-        val creditPage = new OrderPage().goToCredit();
+        var creditPage = new OrderPage().goToCredit();
         creditPage.emptyFieldNotification();
     }
 }

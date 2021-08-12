@@ -2,7 +2,6 @@ package ru.netology.test;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import lombok.val;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,23 +31,23 @@ public class BuyTest {
     }
     @Test
     void shouldGetNotificationInvalidCard() {
-        val cardInfo = new DataHelper().getInvalidCardInfo("approved");
-        val paymentPage = new OrderPage().goToPayment();
+        var cardInfo = new DataHelper().getInvalidCardInfo("approved");
+        var paymentPage = new OrderPage().goToPayment();
         paymentPage.payment(cardInfo);
         paymentPage.invalidCardNotification();
     }
 
     @Test
     void shouldGetNotificationWrongFormatCard() {
-        val cardInfo = new DataHelper().getInvalidFormatCardInfo("4444");
-        val paymentPage = new OrderPage().goToPayment();
+        var cardInfo = new DataHelper().getInvalidFormatCardInfo("4444");
+        var paymentPage = new OrderPage().goToPayment();
         paymentPage.payment(cardInfo);
         paymentPage.wrongFormatNotification();
     }
     @Test
     void shouldPaymentApprovedCard() {
-        val cardInfo = new DataHelper().getValidCardInfo("approved");
-        val paymentPage = new OrderPage().goToPayment();
+        var cardInfo = new DataHelper().getValidCardInfo("approved");
+        var paymentPage = new OrderPage().goToPayment();
         paymentPage.payment(cardInfo);
         paymentPage.approved();
         assertEquals("APPROVED",new DbHelper().getPaymentStatus());
@@ -58,8 +57,8 @@ public class BuyTest {
 
     @Test
     void shouldPaymentDeclinedCard() {
-        val cardInfo = new DataHelper().getValidCardInfo("declined");
-        val paymentPage = new OrderPage().goToPayment();
+        var cardInfo = new DataHelper().getValidCardInfo("declined");
+        var paymentPage = new OrderPage().goToPayment();
         paymentPage.payment(cardInfo);
         paymentPage.declined();
         assertEquals("DECLINED", new DbHelper().getPaymentStatus());
@@ -67,7 +66,7 @@ public class BuyTest {
     }
     @Test
     void shouldGetNotificationEmptyFields() {
-        val paymentPage = new OrderPage().goToPayment();
+        var paymentPage = new OrderPage().goToPayment();
         paymentPage.emptyFieldNotification();
     }
 }
