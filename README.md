@@ -1,6 +1,18 @@
+# Дипломный проект профессии «Тестировщик»
+## Документы
+* [План автоматизации](https://github.com/GlebKlimenko/Diplom/blob/master/documentation/Plan.md)
+* [Отчет по итогам тестирования](https://github.com/GlebKlimenko/Diplom/blob/master/documentation/Report.md)
+* [Отчет по итогам автоматизации](https://github.com/GlebKlimenko/Diplom/blob/master/documentation/Summary.md)
+
+Дипломный проект представляет собой автоматизацию тестирования комплексного сервиса, взаимодействующего с СУБД и API Банка.
+
 ## Для запуска тестов необходимо
 1. Скопировать проект;
-2. Запустить контейнеры командой 'docker-compose up -d', при этом у вас уже должен быть установлен Docker;
+2. Запустить контейнеры командой, при этом у вас уже должен быть установлен Docker:
+
+ ```
+ docker-compose up -d
+ ```
 3. Запустить приложение командой: 
 (по умолчанию приложение работает с базой MySQl);
 
