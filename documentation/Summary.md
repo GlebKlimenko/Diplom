@@ -6,6 +6,11 @@
 * из-за использования эмулятора нет возможности протестировать сервис с использованием большой выборки различных номеров карт, так же отсутствовала информация 
 о формате ввода полей.
 
-Данные риски были учтены на этапе планирования. 
+Данные риски были учтены на этапе планирования.
+
+Так же был составлен отчёт Allure:
+
+* [MySQLTest](https://github.com/GlebKlimenko/Diplom/tree/master/documentation/picture/AllureMySQLTest)
+* [PostgreSQLTest](https://github.com/GlebKlimenko/Diplom/tree/master/documentation/picture/AllurePostgreSQLTest)
 
 На автоматизацию было затрачено около 42 часов. 
