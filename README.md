@@ -11,7 +11,7 @@
  - Вписать IP адрес или URL по которому доступен Docker в параметрах: `spring.credit-gate.url`, `spring.payment-gate.url`, `spring.datasource.url`.
  - При прохождении тестов на MySQL необходимо написать:
  ```
- spring.datasource.url=jdbc:mysql://192.168.99.101:3306/app
+ spring.datasource.url=jdbc:mysql://localhost:3306/app
  ```
  - При прохождении тестов на PostgerSQL необходимо написать:
  ```
