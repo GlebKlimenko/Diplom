@@ -31,7 +31,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     testImplementation 'io.qameta.allure:allure-selenide:2.14.0'
-    testImplementation 'mysql:mysql-connector-java:8.0.22'
+    testImplementation 'mysql:mysql-connector-java:8.0.18'
     testImplementation 'org.postgresql:postgresql:42.2.20'
 }
 
@@ -39,4 +39,8 @@ dependencies {
 test {
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+
+    systemProperty 'property.URL', System.getProperty('property.URL', 'jdbc:postgresql://localhost:5432/app')
+    systemProperty 'property.PASSWORD', System.getProperty('property.PASSWORD', 'pass')
+    systemProperty 'property.NAME_USER', System.getProperty('property.NAME_USER', 'app')
 }
