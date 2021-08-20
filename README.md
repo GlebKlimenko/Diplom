@@ -6,17 +6,6 @@
 
 Дипломный проект представляет собой автоматизацию тестирования комплексного сервиса, взаимодействующего с СУБД и API Банка.
 
-### Настройка тестируемого приложения
-Необходимо отредактировать файл `application.properties`:
- - Вписать IP адрес или URL по которому доступен Docker в параметрах: `spring.credit-gate.url`, `spring.payment-gate.url`, `spring.datasource.url`.
- - При прохождении тестов на MySQL необходимо написать:
- ```
- spring.datasource.url=jdbc:mysql://localhost:3306/app
- ```
- - При прохождении тестов на PostgerSQL необходимо написать:
- ```
- spring.datasource.url=jdbc:postgresql://localhost:5432/app
- ```
 
 ## Для запуска тестов необходимо
 1. Скопировать проект;
@@ -29,25 +18,25 @@
 (по умолчанию приложение работает с базой MySQl);
 
 ```
-java -jar ./artifacts/aqa-shop.jar
+java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar artifacts/aqa-shop.jar
 ```
 
 Для работы с базой PostgreSQL запустить приложение командой:
 
 ```
-java -jar ./artifacts/aqa-shop.jar --spring.datasource.url=jdbc:postgresql://localhost:5432/app
+java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar artifacts/aqa-shop.jar
 ```
 
 4. Запустить автотесты командой: 
 
 - для Windows: 
 ```
-gradlew clean test
+gradlew clean test -Ddb.url=jdbc:mysql://localhost:3306/app
 ```
 
 - для *nix системы: 
 ```
-./gradlew clean test
+./gradlew clean test -Ddb.url=jdbc:mysql://localhost:3306/app
 ```
 
  Для работы с базой PostgreSQL запустить автотесты командой: 
