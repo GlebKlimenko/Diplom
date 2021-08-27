@@ -14,8 +14,7 @@
  ```
  docker-compose up -d
  ```
-3. Запустить приложение командой: 
-(по умолчанию приложение работает с базой MySQl);
+3. Для работы с базой MySQL запустить приложение командой: 
 
 ```
 java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar artifacts/aqa-shop.jar
@@ -27,7 +26,7 @@ java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar artifacts/aqa-
 java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar artifacts/aqa-shop.jar
 ```
 
-4. Запустить автотесты командой: 
+4. Для работы с базой MySQL запустить автотесты командой: 
 
 - для Windows: 
 ```
