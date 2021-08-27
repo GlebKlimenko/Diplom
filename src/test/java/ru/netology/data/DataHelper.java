@@ -54,7 +54,7 @@ public class DataHelper {
     }
 
      public CardInfo getInvalidCardInfo(String card) {
-        return new CardInfo(getCardNumber(card), "13", "24", "Петров Алексей", generateCvc());
+        return new CardInfo(getCardNumber(card), "13", "20", "Петров Алексей", generateCvc());
 }
 
     public CardInfo getValidCardInfo(String card) {
